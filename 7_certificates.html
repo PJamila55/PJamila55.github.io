@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princess Jamila - Certificates</title>
+    <link rel="stylesheet" href="2-styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Container for all content with responsive max-width */
+        .formal-work-container {
+            max-width: 1200px; /* Limits width on large screens */
+            margin: 0 auto; /* Centers container horizontally */
+            padding: 100px 1rem 2rem; /* Top padding ensures content appears below fixed navbar */
+        }
+        
+        /* Main heading styling */
+        .page-title {
+            text-align: center;
+            font-size: 3rem; /* Large font size (3x the base font size) */
+            margin-bottom: 3rem;
+            color: var(--accent-color); /* Uses CSS variable defined in main stylesheet */
+        }
+        
+        /* Back button styling */
+        .back-btn {
+            display: inline-block; /* Makes the link behave like a button */
+            margin: 2rem 0;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border-radius: 50px; /* Creates pill-shaped button */
+            transition: all 0.3s ease; /* Smooth animation for hover effects */
+        }
+        
+        /* Back button hover animation */
+        .back-btn:hover {
+            background-color: #d35400; /* Darker orange on hover */
+            transform: translateX(-5px); /* Shifts button 5px left when hovered */
+        }
+        
+        /* Icon spacing inside back button */
+        .back-btn i {
+            margin-right: 0.5rem;
+        }
+
+        /* CSS Grid layout for certificates */
+        .certificates-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid - creates columns that are at least 300px wide */
+            gap: 2rem; /* Space between grid items */
+            margin-top: 3rem;
+        }
+        
+        /* Individual certificate card styling */
+        .certificate-item {
+            background-color: rgba(0, 0, 0, 0.963);
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Ensures image doesn't spill outside rounded corners */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
+            transition: all 0.3s ease; /* Animation for hover effect */
+        }
+        
+        /* Hover animation for certificate cards */
+        .certificate-item:hover {
+            transform: translateY(-10px); /* Card floats up when hovered */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Stronger shadow when hovered */
+        }
+        
+        /* Makes entire card clickable */
+        .certificate-link {
+            display: block;
+            color: inherit; /* Inherits text color from parent */
+            text-decoration: none; /* Removes underline from links */
+        }
+        
+        /* Certificate image styling */
+        .certificate-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Prevents image distortion when resizing */
+            border-bottom: 3px solid var(--accent-color); /* Accent border under image */
+        }
+        
+        /* Certificate title styling */
+        .certificate-item h3 {
+            padding: 1rem 1rem 0.5rem;
+            font-size: 1.3rem;
+            color: var(--accent-color);
+        }
+        
+        /* Certificate date styling */
+        .certificate-item p {
+            padding: 0 1rem 1rem;
+            font-size: 0.9rem;
+            color: #d9d9d9; /* Light gray text */
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #121212; /* Dark background */
+            color: #fff;
+            padding: 1rem 10;
+            text-align: center;
+            width: 100%;
+            margin-top: 2rem;
+            position: relative; /* Positions footer relative to the document flow */
+            bottom: 0;
+        }
+        
+        /* Footer content layout */
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex; /* Uses flexbox for layout */
+            justify-content: space-between; /* Pushes elements to opposite sides */
+            align-items: center; /* Vertically centers elements */
+            padding: 0 1rem;
+        }
+        
+        /* Removes default paragraph margin */
+        .footer-content p {
+            margin: 0;
+        }
+        
+        /* Footer navigation styling */
+        .footer-links {
+            display: flex;
+            gap: 1rem; /* Space between links */
+        }
+        
+        /* Footer link styling */
+        .footer-links a {
+            color: #d9d9d9;
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth color change on hover */
+        }
+        
+        /* Footer link hover effect */
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Media query for tablets and smaller screens */
+        @media screen and (max-width: 768px) {
+            .certificates-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Smaller cards on tablets */
+            }
+            
+            .footer-content {
+                flex-direction: column; /* Stacks footer content vertically */
+                gap: 1rem;
+            }
+            
+            .page-title {
+                font-size: 2.5rem; /* Smaller heading on smaller screens */
+            }
+        }
+        
+        /* Media query for mobile phones */
+        @media screen and (max-width: 480px) {
+            .certificates-container {
+                grid-template-columns: 1fr; /* Single column layout on phones */
+            }
+            
+            .page-title {
+                font-size: 2rem; /* Even smaller heading on phones */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar - Fixed at top of page -->
+    <nav class="navbar">
+        <div class="logo">PJD</div> <!-- Logo/initials for the site -->
+        <ul class="nav-links">
+            <!-- Navigation links - "../" goes up one directory level -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="4_formalWORK.html">Formal Work</a></li>
+            <li><a href="5_creativeWORK.html">Creative Work</a></li>
+            <li><a href="6_websiteWORK.html">Web Development</a></li>
+            <li><a href="7_certificates.html">Certificates</a></li>
+            <li><a href="index.html#contact">Contact</a></li> <!-- "#contact" links to an ID on the home page -->
+        </ul>
+        <!-- Mobile menu hamburger icon (three lines) -->
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section class="formal-work-container">
+        <!-- Back button with Font Awesome arrow icon -->
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <h1 class="page-title">Certificates</h1>
+        
+        <!-- Certificate grid layout -->
+        <div class="certificates-container">
+            <!-- Certificate 1 - Each certificate is a card with image, title and date -->
+            <div class="certificate-item">
+                <a href="../Images/Certificate1.jpg" target="_blank" class="certificate-link"> <!-- target="_blank" opens link in new tab -->
+                    <img src="../Images/Certificate1.jpg" alt="Certificate 1"> <!-- alt text for accessibility -->
+                    <h3>Academic Honors</h3>
+                    <p>July, 2021</p>
+                </a>
+            </div>
+            <!-- Certificate 2 -->
+            <div class="certificate-item">
+                <a href="../Images/Certificate2.png" target="_blank" class="certificate-link">
+                    <img src="../Images/Certificate2.png" alt="Certificate 2">
+                    <h3>Book Writing Workshop</h3>
+                    <p>September, 2024</p>
+                </a>
+            </div>
+            <!-- Certificate 3 -->
+            <div class="certificate-item">
+                <a href="../Images/Certificate5.jpg" target="_blank" class="certificate-link">
+                    <img src="../Images/Certificate5.jpg" alt="Certificate 3">
+                    <h3>Young Artists Club</h3>
+                    <p>May, 2023</p>
+                </a>
+            </div>
+            <!-- Certificate 4 -->
+            <div class="certificate-item">
+                <a href="../Images/Certificate3.jpg" target="_blank" class="certificate-link">
+                    <img src="../Images/Certificate3.jpg" alt="Certificate 4">
+                    <h3>Sololearn Intro to Python</h3>
+                    <p>November, 2024</p>
+                </a>
+            </div>
+            <!-- Certificate 5 -->
+            <div class="certificate-item">
+                <a href="../Images/Certificate4.jpg" target="_blank" class="certificate-link">
+                    <img src="../Images/Certificate4.jpg" alt="Certificate 5">
+                    <h3>Sololearn Intro to HTML</h3>
+                    <p>April, 2025</p>
+                </a>
+            </div>
+            <!-- Certificate 6 -->
+            <div class="certificate-item">
+                <a href="../Images/Certificate6.jpg" target="_blank" class="certificate-link">
+                    <img src="../Images/Certificate4.jpg" alt="Certificate 6">
+                    <h3>Sololearn Intro to CSS</h3>
+                    <p>May, 2025</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <!-- Copyright information -->
+            <p>&copy; Princess Jamila Tolorio Dinglasan - 2025 PORTFOLIO</p>
+            <!-- Footer navigation -->
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu functionality -->
+    <script>
+        // Navigation Menu Toggle function for Mobile devices
+        const navSlide = () => {
+            // Select DOM elements
+            const burger = document.querySelector('.burger'); // Hamburger menu icon
+            const nav = document.querySelector('.nav-links'); // Navigation menu
+            const navLinks = document.querySelectorAll('.nav-links li'); // Individual nav items
+            
+            // Add click event listener to hamburger icon
+            burger.addEventListener('click', () => {
+                // Toggle Nav visibility by adding/removing 'nav-active' class
+                nav.classList.toggle('nav-active');
+                
+                // Animate each navigation link with a staggered delay
+                navLinks.forEach((link, index) => {
+                    // Check if animation already exists
+                    if (link.style.animation) {
+                        // Remove animation if it exists
+                        link.style.animation = '';
+                    } else {
+                        // Add animation with incremental delay based on link position
+                        // This creates a cascading animation effect
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                // Toggle burger icon animation (transforms to X)
+                burger.classList.toggle('toggle');
+            });
+        }
+
+        // Call the function to initialize nav functionality when page loads
+        navSlide();
+    </script>
+</body>
+</html>
