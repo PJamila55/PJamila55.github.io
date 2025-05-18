@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJD - Formal Work</title>
+    
+    <!-- External CSS file links -->
+    <link rel="stylesheet" href="../1_MAIN/2-styling.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Container for all page content with responsive width and padding */
+        .formal-work-container {
+            max-width: 1200px; /* Sets maximum width for large screens */
+            margin: 0 auto; /* Centers the container horizontally */
+            padding: 100px 1rem 2rem; /* Top padding (100px) for space below navbar, 1rem on sides, 2rem bottom */
+        }
+        
+        /* Main page title styling */
+        .page-title {
+            text-align: center; /* Centers the text */
+            font-size: 3rem; /* Large font size (3 times the root font size) */
+            margin-bottom: 3rem; /* Space below the title */
+            color: var(--accent-color); /* Uses accent color defined in main CSS file */
+        }
+        
+        /* Creates a responsive grid layout for the gallery */
+        .gallery-grid {
+            display: grid; /* Uses CSS Grid layout */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Creates columns that adjust based on available space */
+            grid-gap: 2rem; /* Space between grid items */
+        }
+        
+        /* Styling for each gallery item/card */
+        .gallery-item {
+            position: relative; /* Allows for absolute positioning of child elements if needed */
+            overflow: hidden; /* Hides content that exceeds the boundaries */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            transition: transform 0.3s ease; /* Smooth animation for hover effect */
+            aspect-ratio: 1/1; /* Makes each item a perfect square */
+        }
+        
+        /* Hover effect - lifts item up slightly when mouse hovers over it */
+        .gallery-item:hover {
+            transform: translateY(-10px); /* Moves the item 10px upward */
+        }
+        
+        /* Image styling inside gallery items */
+        .gallery-item img {
+            width: 100%; /* Makes image fill the container width */
+            height: 100%; /* Makes image fill the container height */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
+        
+        /* Back button styling */
+        .back-btn {
+            display: inline-block; /* Allows setting width, height, margin and padding */
+            margin: 2rem 0; /* Vertical margin */
+            padding: 0.8rem 2rem; /* Inner spacing */
+            background-color: var(--accent-color); /* Background color from main CSS variables */
+            color: var(--text-light); /* Text color from main CSS variables */
+            border-radius: 50px; /* Fully rounded edges */
+            transition: all 0.3s ease; /* Smooth animation for all properties */
+        }
+        
+        /* Hover effect for back button */
+        .back-btn:hover {
+            background-color: #d35400; /* Darker orange on hover */
+            transform: translateX(-5px); /* Shifts button 5px left on hover */
+        }
+        
+        /* Icon spacing in back button */
+        .back-btn i {
+            margin-right: 0.5rem; /* Space between icon and text */
+        }
+
+        /* Section for each category of work */
+        .category-section {
+            margin-bottom: 4rem; /* Space between categories */
+        }
+
+        /* Category title styling */
+        .category-title {
+            font-size: 2rem; /* Large font size for section headings */
+            margin-bottom: 1.5rem; /* Space below the title */
+            color: var(--accent-color); /* Uses accent color from main CSS */
+            border-bottom: 2px solid var(--accent-color); /* Underline effect */
+            padding-bottom: 0.5rem; /* Space between text and underline */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar Section -->
+    <nav class="navbar">
+        <div class="logo">PJD</div> <!-- Logo with initials -->
+        <ul class="nav-links"> <!-- Navigation menu list -->
+            <li><a href="../1_MAIN/1-Princess_Portfolio.html">Home</a></li> <!-- Navigation links with relative paths -->
+            <li><a href="4_formalWORK.html">Formal Work</a></li>
+            <li><a href="5_creativeWORK.html">Creative Work</a></li>
+            <li><a href="6_websiteWORK.html">Web Development</a></li>
+            <li><a href="../Pages/7_certificates.html">Certificates</a></li>
+            <li><a href="../1_MAIN/1-Princess_Portfolio.html#contact">Contact</a></li> <!-- Link with anchor tag (#) for scrolling to a specific section -->
+        </ul>
+        <!-- Mobile hamburger menu icon (three horizontal lines) -->
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section class="formal-work-container">
+        <!-- Back button with Font Awesome arrow icon -->
+        <a href="../1_MAIN/1-Princess_Portfolio.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <h1 class="page-title">Formal Work</h1>
+
+        <!-- First Project Category -->
+        <div class="category-section">
+            <h2 class="category-title">METAVERSE - Digital Marketing Project</h2>
+            <div class="gallery-grid">
+                <!-- Gallery items, each with an image -->
+                <!-- Each div creates a card with an image inside -->
+                <div class="gallery-item">
+                    <img src="../Images/Formal1.png" alt="Pizza 1"> <!-- alt attribute provides text for screen readers and if image fails to load -->
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Formal2.png" alt="Pizza 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Formal3.png" alt="Pizza 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Formal4.png" alt="Pizza 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Formal5.png" alt="Pizza 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Formal6.png" alt="Pizza 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Formal7.png" alt="Pizza 7">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Formal8.png" alt="Pizza 8">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Formal9.png" alt="Pizza 9">
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Project Category -->
+        <div class="category-section">
+            <h2 class="category-title">Storybook Volunteer</h2>
+            <div class="gallery-grid">
+                <!-- Another set of gallery items -->
+                <div class="gallery-item">
+                    <img src="../Images/Book1.png" alt="Story Page 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Book2.png" alt="Story Page 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Book3.png" alt="Story Page 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Book4.png" alt="Story Page 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Book5.png" alt="Story Page 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="../Images/Book6.png" alt="Story Page 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Princess Jamila Tolorio Dinglasan - 2025 PORTFOLIO</p> <!-- Copyright information with special character &copy; -->
+            <a href="../1_MAIN/1-Princess_Portfolio.html">Home</a> <!-- Link back to homepage -->
+        </div>
+    </footer>
+
+    <!-- JavaScript code for the mobile navigation menu -->
+    <script>
+        // Function to handle mobile navigation toggle
+        const navSlide = () => {
+            // Getting references to key elements
+            const burger = document.querySelector('.burger'); // The hamburger icon
+            const nav = document.querySelector('.nav-links'); // The navigation menu
+            const navLinks = document.querySelectorAll('.nav-links li'); // All navigation items
+            
+            // Add click event listener to the burger menu
+            burger.addEventListener('click', () => {
+                // Toggle the nav-active class to show/hide the menu
+                nav.classList.toggle('nav-active');
+                
+                // Loop through each navigation link
+                navLinks.forEach((link, index) => {
+                    // Check if animation exists already
+                    if (link.style.animation) {
+                        link.style.animation = ''; // Remove animation if it exists
+                    } else {
+                        // Add animation with staggered delay based on item position
+                        // This creates a cascading effect when menu opens
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                // Toggle the burger menu animation to form an X
+                burger.classList.toggle('toggle');
+            });
+        }
+
+        // Call the function to initialize navigation
+        navSlide();
+    </script>
+</body>
+</html>
