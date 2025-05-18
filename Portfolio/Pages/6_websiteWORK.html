@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJD - Web Development</title>
+    
+    <link rel="stylesheet" href="../1_MAIN/2-styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>      
+        /* Main container for all content with responsive width */
+        .website-work-container {
+            max-width: 1200px; /* Limits width on large screens */
+            margin: 0 auto; /* Centers container horizontally */
+            padding: 100px 1rem 2rem; /* Top padding accounts for fixed navbar */
+        }
+        
+        /* Main heading styling */
+        .page-title {
+            text-align: center; /* Centers the text */
+            font-size: 3rem; /* Large font size (3x root font size) */
+            margin-bottom: 3rem; /* Space below title */
+            color: var(--accent-color); /* Uses color variable from main CSS file */
+        }
+        
+        /* Grid layout for project cards */
+        .projects-grid {
+            display: grid; /* Uses CSS Grid layout */
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Creates responsive columns */
+            grid-gap: 2.5rem; /* Space between grid items */
+        }
+        
+        /* Individual project card styling */
+        .project-card {
+            background-color: #000000; /* Black background for cards */
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Hides content outside border radius */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+            transition: transform 0.3s ease; /* Smooth animation for hover effect */
+        }
+        
+        /* Hover effect - card moves up slightly */
+        .project-card:hover {
+            transform: translateY(-10px); /* Moves card up by 10px */
+        }
+        
+        /* Container for project images */
+        .project-image {
+            position: relative; /* Establishes positioning context */
+            height: 220px; /* Fixed height for consistent layout */
+            overflow: hidden; /* Ensures images don't spill outside container */
+            border-bottom: 3px solid var(--accent-color); /* Accent border below image */
+        }
+        
+        /* Image styling within project cards */
+        .project-image img {
+            width: 100%; /* Full width of container */
+            height: 100%; /* Full height of container */
+            object-fit: cover; /* Ensures image covers area without distortion */
+            transition: transform 0.5s ease; /* Smooth zoom animation */
+        }
+        
+        /* Image zoom effect on hover */
+        .project-card:hover .project-image img {
+            transform: scale(1.05); /* Enlarges image by 5% */
+        }
+        
+        /* Container for text content in project cards */
+        .project-content {
+            padding: 1.5rem; /* Inner spacing */
+        }
+        
+        /* Project title styling */
+        .project-content h3 {
+            font-size: 1.4rem; /* Larger than standard text */
+            margin-bottom: 0.5rem; /* Space below heading */
+            color: var(--accent-color); /* Uses accent color from main CSS */
+        }
+        
+        /* Project description styling */
+        .project-content p {
+            color: #d9d9d9; /* Light gray text for readability on dark background */
+            margin-bottom: 1.2rem; /* Space below paragraph */
+            font-size: 0.95rem; /* Slightly smaller than default text */
+            line-height: 1.5; /* Increased line height for readability */
+        }
+        
+        /* Container for technology tags */
+        .tech-stack {
+            display: flex; /* Uses Flexbox layout */
+            flex-wrap: wrap; /* Allows tags to wrap to next line if needed */
+            gap: 0.5rem; /* Space between tags (modern alternative to margin) */
+        }
+        
+        /* Individual technology tag styling */
+        .tech-tag {
+            background-color: #333333; /* Dark gray background */
+            padding: 0.4rem 0.8rem; /* Inner spacing */
+            border-radius: 15px; /* Rounded pill shape */
+            font-size: 0.8rem; /* Small text size */
+            color: #f1f1f1; /* Very light gray text */
+            border: 1px solid #444; /* Subtle border */
+        }
+        
+        /* Back button styling */
+        .back-btn {
+            display: inline-block; /* Allows setting width, height, margin and padding */
+            margin: 2rem 0; /* Vertical margin */
+            padding: 0.8rem 2rem; /* Inner spacing */
+            background-color: var(--accent-color); /* Background from CSS variable */
+            color: var(--text-light); /* Text color from CSS variable */
+            border-radius: 50px; /* Fully rounded edges */
+            transition: all 0.3s ease; /* Smooth animation for hover */
+        }
+        
+        /* Hover effect for back button */
+        .back-btn:hover {
+            background-color: #d35400; /* Darker orange on hover */
+            transform: translateX(-5px); /* Shifts button left on hover */
+        }
+        
+        /* Icon styling in back button */
+        .back-btn i {
+            margin-right: 0.5rem; /* Space between icon and text */
+        }
+
+        /* Media query for responsive design on smaller screens */
+        @media screen and (max-width: 768px) {
+            /* Adjust grid for smaller screens */
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Smaller minimum column width */
+            }
+            
+            /* Stack footer content vertically on small screens */
+            .footer-content {
+                flex-direction: column; /* Changes from row to column layout */
+                gap: 1rem; /* Space between stacked items */
+            }
+            
+            /* Smaller page title on mobile */
+            .page-title {
+                font-size: 2.5rem; /* Reduced font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar Section -->
+    <nav class="navbar">
+        <div class="logo">PJD</div> <!-- Logo displaying initials -->
+        <ul class="nav-links"> <!-- List of navigation links -->
+            <li><a href="../1_MAIN/1-Princess_Portfolio.html">Home</a></li> <!-- Navigation links with relative paths -->
+            <li><a href="4_formalWORK.html">Formal Work</a></li>
+            <li><a href="5_creativeWORK.html">Creative Work</a></li>
+            <li><a href="6_websiteWORK.html">Web Development</a></li>
+            <li><a href="../Pages/7_certificates.html">Certificates</a></li>
+            <li><a href="../1_MAIN/1-Princess_Portfolio.html#contact">Contact</a></li> <!-- Using # to link to specific section on home page -->
+        </ul>
+        <!-- Mobile hamburger menu (three lines) -->
+        <div class="burger">
+            <div class="line1"></div> <!-- First line of hamburger icon -->
+            <div class="line2"></div> <!-- Second line of hamburger icon -->
+            <div class="line3"></div> <!-- Third line of hamburger icon -->
+        </div>
+    </nav>
+
+    <!-- Web Development Projects Section -->
+    <section class="website-work-container">
+        <!-- Back button with left arrow icon -->
+        <a href="../1_MAIN/1-Princess_Portfolio.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <h1 class="page-title">Code Projects</h1>
+        
+        <!-- Grid container for project cards -->
+        <div class="projects-grid">
+            <!-- Project 1 Card -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../Images/Web1.png" alt="Petrol Calculator"> <!-- Image with alt text for accessibility -->
+                </div>
+                <div class="project-content">
+                    <h3>Petrol Calculator</h3> <!-- Project title -->
+                    <p>A website required for a University project that allows the user to select their petrol type
+                        and calculate the price of the petrol fuel needed for their car.
+                    </p> <!-- Project description -->
+                    <div class="tech-stack">
+                        <!-- Technology tags show what was used to build the project -->
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 2 Card -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../Images/Web2.png" alt="FordVFerrari Fanpage">
+                </div>
+                <div class="project-content">
+                    <h3>Ford v Ferrari Fanpage</h3>
+                    <p>A University project showcasing my ability to create webpages and connecting them together to 
+                        form a Ford V Ferrari fanpage with information regarding the movie.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 Card -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../Images/Web3.png" alt="Simple Study Planner">
+                </div>
+                <div class="project-content">
+                    <h3>Study Planner Prototype</h3>
+                    <p>A university project outlining the basic structure of a study planner.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 4 Card -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../Images/Web4.png" alt="Scratch 3 Thing">
+                </div>
+                <div class="project-content">
+                    <h3>Scratch Chase Game</h3>
+                    <p>A project for the first chapter of my CS50 course in where I created a game with Scratch 3,
+                        where the user's cursor controls a knight, which then has to collect gems all the while avoiding
+                        a ghost.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Scratch 3</span> <!-- Different technology used here (block-based coding) -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 5 Card -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../Images/Web5.png" alt="Radio Soundboard">
+                </div>
+                <div class="project-content">
+                    <h3>Radio Soundboard</h3>
+                    <p>A website page of a radio soundboard required for a University project, which showcases my ability in Javascript.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Princess Jamila Tolorio Dinglasan - 2025 PORTFOLIO</p> <!-- Copyright notice with HTML entity &copy; -->
+            <div class="footer-links">
+                <a href="../1_MAIN/1-Princess_Portfolio.html">Home</a> <!-- Link back to home page -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactive features -->
+    <script>
+        // Mobile Navigation Menu Toggle Function
+        const navSlide = () => {
+            // Select DOM elements using query selectors
+            const burger = document.querySelector('.burger'); // The hamburger icon
+            const nav = document.querySelector('.nav-links'); // The navigation menu
+            const navLinks = document.querySelectorAll('.nav-links li'); // All navigation items
+            
+            // Add click event listener to burger menu
+            burger.addEventListener('click', () => {
+                // Toggle mobile navigation menu visibility
+                nav.classList.toggle('nav-active'); // Adds or removes the active class
+                
+                // Loop through each nav link and animate them individually
+                navLinks.forEach((link, index) => {
+                    // Check if the animation is already applied
+                    if (link.style.animation) {
+                        link.style.animation = ''; // Remove animation
+                    } else {
+                        // Add staggered animation with delay based on position
+                        // This creates a cascading effect for menu items
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                // Toggle animation class for burger icon (X shape when active)
+                burger.classList.toggle('toggle');
+            });
+        }
+
+        // Call the function to initialize navigation functionality
+        navSlide();
+    </script>
+</body>
+</html>
