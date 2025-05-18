@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJD - Creative Work</title>
+    
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="2-styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Main container with responsive width and centered on page */
+        .creative-work-container {
+            max-width: 1200px; /* Maximum width for large screens */
+            margin: 0 auto; /* Centers container horizontally */
+            padding: 100px 1rem 2rem; /* Top padding accommodates fixed navbar */
+        }
+        
+        /* Main page heading styling */
+        .page-title {
+            text-align: center; /* Centers the text */
+            font-size: 3rem; /* Large font size (3x root font size) */
+            margin-bottom: 3rem; /* Space below the title */
+            color: var(--accent-color); /* Uses color variable from main CSS */
+        }
+        
+        /* Grid layout for photo gallery - more compact than the formal work page */
+        .photo-grid {
+            display: grid; /* Uses CSS Grid layout */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Creates responsive columns */
+            grid-auto-rows: auto; /* Row height based on content */
+            grid-gap: 0.5rem; /* Small gap between images */
+            margin: 2rem 0; /* Vertical margin */
+            border-radius: 12px; /* Rounded corners for the entire grid */
+            overflow: hidden; /* Prevents images from spilling outside rounded corners */
+        }
+        
+        /* Individual photo item styling */
+        .grid-item {
+            position: relative; /* Enables positioning context for child elements */
+            overflow: hidden; /* Clips content that goes beyond boundaries */
+            transition: transform 0.3s ease; /* Smooth animation for hover effect */
+        }
+        
+        /* Image styling within grid items */
+        .grid-item img {
+            width: 100%; /* Makes image fill container width */
+            height: 100%; /* Makes image fill container height */
+            object-fit: cover; /* Ensures image covers area without distortion */
+            display: block; /* Removes default inline spacing */
+        }
+        
+        /* Hover effect for grid items - slight zoom */
+        .grid-item:hover {
+            transform: scale(1.02); /* Enlarges item by 2% on hover */
+            z-index: 2; /* Brings hovered item to front */
+        }
+        
+        /* Section for creative process/software list */
+        .creative-process {
+            background-color: var(--bg-dark); /* Dark background from CSS variables */
+            color: var(--text-light); /* Light text color from CSS variables */
+            padding: 5rem 1rem; /* Spacious padding */
+            margin-top: 5rem; /* Space between this and previous section */
+        }
+        
+        /* Title for software section */
+        .process-title {
+            text-align: center; /* Centers the text */
+            font-size: 2.5rem; /* Large font size */
+            margin-bottom: 3rem; /* Space below the title */
+            color: var(--accent-color); /* Accent color from CSS variables */
+        }
+        
+        /* Flexible layout for software items */
+        .software-grid {
+            display: flex; /* Uses CSS Flexbox layout */
+            flex-wrap: wrap; /* Allows items to wrap to next line */
+            justify-content: center; /* Centers items horizontally */
+            max-width: 1200px; /* Maximum width */
+            margin: 0 auto; /* Centers the grid */
+            gap: 20px; /* Space between items (modern alternative to margin) */
+        }
+        
+        /* Individual software item styling */
+        .software-item {
+            background-color: #333; /* Dark gray background */
+            padding: 20px; /* Inner spacing */
+            border-radius: 8px; /* Rounded corners */
+            text-align: center; /* Centers text */
+            min-width: 150px; /* Minimum width for each item */
+        }
+        
+        /* Back button styling */
+        .back-btn {
+            display: inline-block; /* Allows setting dimensions and margins */
+            margin: 2rem 0; /* Vertical margin */
+            padding: 0.8rem 2rem; /* Inner spacing */
+            background-color: var(--accent-color); /* Background from CSS variable */
+            color: var(--text-light); /* Text color from CSS variable */
+            border-radius: 50px; /* Fully rounded corners */
+            transition: all 0.3s ease; /* Smooth animation for all properties */
+        }
+        
+        /* Hover effect for back button */
+        .back-btn:hover {
+            background-color: #d35400; /* Darker shade on hover */
+            transform: translateX(-5px); /* Shifts button left on hover */
+        }
+        
+        /* Icon styling in back button */
+        .back-btn i {
+            margin-right: 0.5rem; /* Space between icon and text */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">PJD</div> <!-- Logo with initials -->
+        <ul class="nav-links"> <!-- Navigation menu list -->
+            <li><a href="index.html">Home</a></li> <!-- Navigation links with relative paths -->
+            <li><a href="4_formalWORK.html">Formal Work</a></li>
+            <li><a href="5_creativeWORK.html">Creative Work</a></li>
+            <li><a href="6_websiteWORK.html">Web Development</a></li>
+            <li><a href="7_certificates.html">Certificates</a></li>
+            <li><a href="index.html#contact">Contact</a></li> <!-- Link with anchor tag for section on home page -->
+        </ul>
+        <!-- Mobile hamburger menu icon -->
+        <div class="burger">
+            <div class="line1"></div> <!-- First line of hamburger icon -->
+            <div class="line2"></div> <!-- Second line of hamburger icon -->
+            <div class="line3"></div> <!-- Third line of hamburger icon -->
+        </div>
+    </nav>
+
+    <!-- Creative Work Gallery Section -->
+    <section class="creative-work-container">
+        <!-- Back button with left arrow icon -->
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <h1 class="page-title">Creative Work</h1>
+        
+        <!-- Instagram-style photo grid for showcasing artwork -->
+        <div class="photo-grid">
+            <!-- Each grid item contains an image -->
+            <div class="grid-item">
+                <img src="../Images/Creativ1.png" alt="Drawing 1"> <!-- alt attribute for accessibility and SEO -->
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ2.png" alt="Drawing 2">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ3.png" alt="Drawing 3">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ4.png" alt="Drawing 4">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ5.png" alt="Drawing 5">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ7.jpg" alt="Drawing 6">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ8.png" alt="Drawing 7">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ9.jpg" alt="Drawing 8">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ10.png" alt="Drawing 9">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ11.png" alt="Drawing 10">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ12.jpg" alt="Drawing 11">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ13.png" alt="Drawing 12">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ14.jpg" alt="Drawing 13">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ15.jpg" alt="Drawing 14">
+            </div>
+            <div class="grid-item">
+                <img src="../Images/Creativ18.png" alt="Drawing 15">
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Section with dark background -->
+    <section class="creative-process">
+        <h2 class="process-title">Software & Websites I Use</h2>
+        <!-- Flexible grid layout for software items -->
+        <div class="software-grid">
+            <div class="software-item">
+                <h3>Krita</h3>
+            </div>
+            <div class="software-item">
+                <h3>Adobe Photoshop</h3>
+            </div>
+            <div class="software-item">
+                <h3>Adobe Premiere</h3>
+            </div>
+            <div class="software-item">
+                <h3>Figma</h3>
+            </div>
+            <div class="software-item">
+                <h3>Canva</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Princess Jamila Tolorio Dinglasan - 2025 PORTFOLIO</p> <!-- Copyright symbol created with HTML entity &copy; -->
+            <div class="footer-links">
+                <a href="index.html">Home</a> <!-- Footer link to home page -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactive features -->
+    <script>
+        // Mobile Navigation Menu Toggle Function
+        const navSlide = () => {
+            // Select DOM elements needed for the menu
+            const burger = document.querySelector('.burger'); // Hamburger menu icon
+            const nav = document.querySelector('.nav-links'); // Navigation menu
+            const navLinks = document.querySelectorAll('.nav-links li'); // All navigation links
+            
+            // Add click event listener to hamburger icon
+            burger.addEventListener('click', () => {
+                // Toggle navigation menu visibility with class
+                nav.classList.toggle('nav-active');
+                
+                // Add staggered animation to each navigation link
+                navLinks.forEach((link, index) => {
+                    // Check if animation already exists
+                    if (link.style.animation) {
+                        link.style.animation = ''; // Remove animation
+                    } else {
+                        // Add animation with delay based on position
+                        // This creates a cascade effect as menu items appear
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                
+                // Toggle animation for burger icon (transforms to X)
+                burger.classList.toggle('toggle');
+            });
+        }
+
+        // Initialize the navigation function
+        navSlide();
+        
+        // Advanced Feature: Dynamic grid layout based on image dimensions
+        window.addEventListener('load', () => {
+            // Select all grid items
+            const gridItems = document.querySelectorAll('.grid-item');
+            
+            // Loop through each grid item
+            gridItems.forEach(item => {
+                // Get the image inside this grid item
+                const img = item.querySelector('img');
+                
+                // Function to execute when image loads
+                img.onload = function() {
+                    // Calculate aspect ratio (height/width)
+                    const ratio = this.naturalHeight / this.naturalWidth;
+                    
+                    // If image is tall (portrait orientation)
+                    if (ratio > 1.5) {
+                        item.style.gridRow = 'span 2'; // Make it take up 2 rows
+                    }
+                    
+                    // If image is wide (landscape orientation)
+                    if (ratio < 0.6) {
+                        item.style.gridColumn = 'span 2'; // Make it take up 2 columns
+                    }
+                }
+                
+                // Handle case where image might already be cached
+                if (img.complete) {
+                    img.onload(); // Manually trigger onload function for cached images
+                }
+            });
+        });
+    </script>
+</body>
+</html>
