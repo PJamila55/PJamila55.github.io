@@ -1,0 +1,288 @@
+<!-- 
+ Princess Jamila Tolorio Dinglasan
+ Web Development - Assessment 2
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title that appears in browser tab -->
+    <title>PJD Portfolio</title>
+    <link rel="stylesheet" href="2-styling.css">
+    <script src="3-java_thing.js" defer></script>
+    
+    <!-- Font Awesome library for icons like arrows and social media symbols -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts connection for custom typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Creates a fixed background image that stays in place when scrolling */
+        body {
+            position: relative;
+        }
+        
+        /* Adds the background image with a semi-transparent overlay effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url('Photo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.65; /* Controls how see-through the background is (0=invisible, 1=solid) */
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* This class will hide the background when JavaScript detects scrolling */
+        .hide-bg::before {
+            opacity: 0;
+        }
+
+        /* Typography settings for headings and other text elements */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        body, p, a, input, textarea, button {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Special styling for the Contact button in the navigation bar */
+        .nav-links .contact-btn a {
+            background-color: var(--accent-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hover effect for the Contact button */
+        .nav-links .contact-btn a:hover {
+            background-color: #d35400;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar with logo, links, and mobile menu button -->
+    <nav class="navbar">
+        <div class="logo">PJD</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../Pages/4_formalWORK.html">Formal Work</a></li>
+            <li><a href="../Pages/5_creativeWORK.html">Creative Work</a></li>
+            <li><a href="../Pages/6_websiteWORK.html">Web Development</a></li>
+            <li><a href="../Pages/7_certificates.html">Certificates</a></li>
+            <li class="contact-btn"><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- Mobile menu hamburger icon (three lines) when viewed on mobile -->
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+<!-- Hero Section - The first thing visitors see when they arrive -->
+<section id="home" class="hero">
+    <div class="hero-text">
+        <h3>welcome to my</h3>
+        <h1>PORTFOLIO</h1>
+        <h2>Princess Jamila Tolorio Dinglasan</h2>
+        
+        <!-- Call-to-action button with down arrow icon -->
+        <a href="#about" class="cta-button">
+            Get to know me
+            <i class="fas fa-arrow-down"></i>
+        </a>
+    </div>
+</section>
+
+    <!-- About Me Section - Introduction for myself -->
+    <section id="about" class="about">
+        <h2 class="section-title">Who am I?</h2>
+        <div class="about-container">
+            <!-- Left side with skills list -->
+            <div class="about-left">
+                <h3>Nice to meet you!</h3>
+                <ul>
+                    <li>Creative Coder</li>
+                    <li>Graphic Designer</li>
+                    <li>Artist</li>
+                    <li>Editor</li>
+                </ul>
+            </div>
+            <!-- Center with profile image -->
+            <div class="about-image">
+                <img src="../Images/A_Profile.png" alt="Princess Jamila Tolorio Dinglasan" />
+            </div>
+            <!-- Right side with personal bio -->
+            <div class="about-right">
+                <h3>Princess Jamila Tolorio Dinglasan</h3>
+                <p>Hello! I'm Princess, a Creative Computing student from Bath Spa University with a strong passion for design and coding.</p>
+                <p>Originally from the Philippines and currently living in the UAE, I worked on a range of university projects and completed certificate courses that helped me sharpen my design and editing skills.</p>
+                <p>I have a keen eye for detail and enjoy creating clean, engaging visuals. I'm comfortable using tools like Photoshop, Figma, and other programs to create apps, bringing ideas to life across different media.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section - Educational background and certifications -->
+    <section id="experience" class="experience">
+        <div class="experience-container">
+            <!-- Left side with section heading -->
+            <div class="experience-left">
+                <h3>Certified<br>Experience</h3>
+            </div>
+            <!-- Right side with education and certification details -->
+            <div class="experience-right">
+                <div class="experience-item">
+                    <h4>Bath Spa University</h4>
+                    <p>I studied Creative Computing as my course in Bath Spa University, where I learned the necessary skills
+                        in programming languages, UX design, and visual design.
+                    </p>
+                </div>
+                <div class="experience-item">
+                    <h4>Metaverse: Digital Marketing</h4>
+                    <p>I took a Digital Marketing class in Metaverse which helped me learn how to properly advertize
+                        and connect with customers in a meaningful and efficient way. 
+                    </p>
+                </div>
+                <div class="experience-item">
+                    <h4>Extracurricular Certifications</h4>
+                    <p>I enrolled in many short certificate classes to widen my experience in different fields, as well as to
+                        improve the skills I already have including: storybook writing, professional introduction to flight
+                        attendant training, in depth digital marketing, and art workshops.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formal Work Section - Professional portfolio samples -->
+    <section id="formal-work" class="work-section">
+        <h2 class="section-title">Formal Work</h2>
+        <!-- Gallery grid of portfolio images -->
+        <div class="work-gallery">
+            <div class="work-item">
+                <img src="../Images/Formal1.png" alt="Pizza Hut Ad 1">
+            </div>
+            <div class="work-item">
+                <img src="../Images/Formal2.png" alt="Pizza Hut Ad 2">
+            </div>
+            <div class="work-item">
+                <img src="../Images/Formal3.png" alt="Pizza Hut Ad 3">
+            </div>
+            <div class="work-item">
+                <img src="../Images/Formal4.png" alt="Pizza Hut Ad 4">
+            </div>
+        </div>
+        <!-- Button linking to full gallery page -->
+        <a href="../Pages/4_formalWORK.html"><button class="see-more-btn"><b>see more</b></button></a>
+    </section>
+
+    <!-- Creative Work Section - Artistic portfolio samples -->
+    <section id="creative-work" class="work-section">
+        <h2 class="section-title">Creative Work</h2>
+        <!-- Gallery grid of artwork images -->
+        <div class="work-gallery">
+            <div class="work-item">
+                <img src="../Images/Creativ1.png" alt="Art Drawing 1">
+            </div>
+            <div class="work-item">
+                <img src="../Images/Creativ2.png" alt="Art Drawing 2">
+            </div>
+            <div class="work-item">
+                <img src="../Images/Creativ3.png" alt="Art Drawing 3">
+            </div>
+            <div class="work-item">
+                <img src="../Images/Creativ4.png" alt="Art Drawing 4">
+            </div>
+        </div>
+        <!-- Button linking to full gallery page -->
+        <a href="../Pages/5_creativeWORK.html"><button class="see-more-btn"><b>see more</b></button></a>
+    </section>
+
+    <!-- Web Development Section - Coding projects showcase -->
+    <section id="web-development" class="work-section">
+        <h2 class="section-title">Coding Projects</h2>
+        <!-- Gallery grid of web project screenshots with titles -->
+        <div class="work-gallery">
+            <div class="work-item">
+                <img src="../Images/Web1.png" alt="Web Development 1">
+                <!-- Overlay with project title that appears on hover -->
+                <div class="overlay">
+                    <h3>Petrol Calculator</h3>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="../Images/Web2.png" alt="Web Development 2">
+                <div class="overlay">
+                    <h3>Ford v Ferrari</h3>
+                </div>
+            </div>
+            <div class="work-item">
+                <img src="../Images/Web3.png" alt="Web Development 3">
+                <div class="overlay">
+                    <h3>Creative Computing</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Button linking to full projects page -->
+        <a href="../Pages/6_websiteWORK.html"><button class="see-more-btn"><b>see more</b></button></a>
+    </section>
+
+    <!-- Contact Section - Form for visitors to reach out -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-container">
+            <!-- Contact information with icons -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-envelope"></i>PJamila30@gmail.com</p>
+                <p><i class="fas fa-phone"></i>+971 52 907 3395</p>
+            </div>
+            <!-- Contact form with name, email, and message fields -->
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+ 
+    <!-- Footer - Copyright information and navigation link -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Princess Jamila Tolorio Dinglasan - 2025 PORTFOLIO</p>
+            <div class="footer-links">
+                <a href="#home">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
